@@ -16,7 +16,7 @@ int *f(int index) {
 void displayFrame(int frame) {
     char buffer[50];
     char* frames[] = {
-        "  o  \n /|\\ \n / \\ ",
+        "  i  \n /|\\ \n / \\ ",
         "  o  \n-/|\\ \n / \\ ",
         "  o  \n /|\\-\n / \\ ",
         "  o  \n /|\\ \n / \\-"
