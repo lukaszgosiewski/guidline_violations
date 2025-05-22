@@ -1,0 +1,30 @@
+name: Run GV Demo Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-demo-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repo2 code
+      - name: Checkout repo2
+        uses: actions/checkout@v3
+
+      # Step 2: Run your custom action from repo1
+      - name: Run GV Demo Action
+        uses: uname1/repo1/gv_demo_action@v1
+        with:
+          REPO_NAME: "my-org/my-cpp-project"
+          BRANCH_NAME: "main"
+          COMMIT_HASH: ${{ github.sha }}
+          PATH_TO_CODE: "./testproject/code"
+          PATH_TO_BUILDING_SCRIPT: "./testproject/script.sh"
+          AUTH_URL: "https://auth.demos01.soc.plaxidityx.com/auth/realms/cloud/protocol/openid-connect/token"
+          APP_URL: "http://cert-c-demo.a.demos01.soc.plaxidityx.com/public-api/guideline/v1/guideline-violations"
+          USERNAME: "api-demo-user@plaxidityx.com"
+          PASSWORD: "xxx"
