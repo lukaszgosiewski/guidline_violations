@@ -14,6 +14,13 @@ jobs:
       # Step 1: Checkout repo2 code
       - name: Checkout repo2
         uses: actions/checkout@v3
+        
+      - name: Checkout private action repo
+        uses: actions/checkout@v3
+        with:
+          repository: lukaszgosiewski/guidline
+          token: ${{ secrets.PRIVATE_ACTIONS_PAT }}
+          path: guidline_action
 
       # Step 2: Run your custom action from repo1
       - name: Run GV Demo Action
