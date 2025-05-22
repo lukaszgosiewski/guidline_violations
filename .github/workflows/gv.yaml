@@ -12,7 +12,7 @@ jobs:
 
     steps:
       # Step 1: Checkout repo2 code
-      - name: Checkout repo2
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       # Step 2: Run your custom action from repo1
@@ -28,3 +28,4 @@ jobs:
           APP_URL: "http://cert-c-demo.a.demos01.soc.plaxidityx.com/public-api/guideline/v1/guideline-violations"
           USERNAME: "api-demo-user@plaxidityx.com"
           PASSWORD: "xxx"
+          TOKEN: ${{ secrets.PRIVATE_ACTIONS_PAT }}
