@@ -17,7 +17,7 @@ jobs:
 
       # Step 2: Run your custom action from repo1
       - name: Run GV Demo ActionE
-        uses: lukaszgosiewski/guidline/gv_demo_action@main
+        uses: lukaszgosiewski/guidline@main
         with:
           REPO_NAME: "my-org/my-cpp-project"
           BRANCH_NAME: "main"
