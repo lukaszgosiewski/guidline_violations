@@ -14,17 +14,10 @@ jobs:
       # Step 1: Checkout repo2 code
       - name: Checkout repo2
         uses: actions/checkout@v3
-        
-      - name: Checkout private action repo
-        uses: actions/checkout@v3
-        with:
-          repository: lukaszgosiewski/guidline
-          token: ${{ secrets.PRIVATE_ACTIONS_PAT }}
-          path: guidline_action
 
       # Step 2: Run your custom action from repo1
-      - name: Run GV Demo Action
-        uses: lukaszgosiewski/guidline/gv_demo_action@v1
+      - name: Run GV Demo ActionE
+        uses: lukaszgosiewski/guidline/gv_demo_action@main
         with:
           REPO_NAME: "my-org/my-cpp-project"
           BRANCH_NAME: "main"
